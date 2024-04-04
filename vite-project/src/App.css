@@ -5,12 +5,35 @@
 }
 
 body {
-  background: grey;
+  background: #6D6027;  
+  background: -webkit-linear-gradient(to right, #D3CBB8, #6D6027);  
+  background: linear-gradient(to right, #D3CBB8, #6D6027); 
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
 }
 
 .table-container {
-  width: 80%; /* Set the desired width for the table container */
-  margin: 0 auto; /* Center the table container horizontally */
+  width: 80%;
+  margin: 0 auto;
 }
 
 .input {
@@ -18,14 +41,14 @@ body {
 }
 .app {
   height: 100vh;
-  width: 100wv;
-  display: grid;
+  width: 100%;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 table {
   max-height: 100%;
-  /* background: whitesmoke; */
   border-radius: 10px;
   margin-top: 10px;
   padding-right: 140px;
@@ -36,9 +59,9 @@ table {
   }
 }
 
-
 .container {
   height: 50vh;
+  width: 40%;
   display: flex;
   flex-direction: column;
   background: #dacccc;
@@ -56,6 +79,22 @@ table {
   border-top: 1px solid whitesmoke;
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
 
-::-webkit-scrollbar {
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    margin-top: 12px;
+  }
+}
+
+.center {
+  text-align: center;
 }

@@ -1,31 +1,5 @@
 import { create } from "zustand";
-
-interface MyStoreState {
-  data: string;
-  currentPage: number;
-  pageNumberInput: string;
-  tagsData: Tag[];
-  itemsPerPage: number;
-  sortBy: string;
-  sortOrder: string;
-}
-
-interface Tag {
-  name: string;
-  count: number;
-}
-
-interface MyStoreActions extends MyStoreState {
-  setData: (data: string) => void;
-  setCurrentPage: (currentPage: number) => void;
-  setPageNumberInput: (pageNumberInput: string) => void;
-  setTagsData: (tagsData: Tag[]) => void;
-  handlePageChange: (value: number) => void;
-  handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  setItemsPerPage: (value: number) => void;
-  setSortBy: (sortBy: string) => void; // Add action for setting sortBy
-  setSortOrder: (sortOrder: string) => void; // Add action for setting sortOrder
-}
+import { MyStoreActions, MyStoreState, Tag } from "./types";
 
 const useMyStore = create<MyStoreState & MyStoreActions>((set) => ({
   data: "Hello from Context!",
@@ -47,10 +21,8 @@ const useMyStore = create<MyStoreState & MyStoreActions>((set) => ({
     set({ currentPage: pageNumber });
   },
   setItemsPerPage: (value: number) => set({ itemsPerPage: value }),
-  setSortBy: (sortBy: string) => set({ sortBy }), // Define action for setting sortBy
-  setSortOrder: (sortOrder: string) => {
-    set({ sortOrder })
-  }, // Define action for setting sortOrder
+  setSortBy: (sortBy: string) => set({ sortBy }),
+  setSortOrder: (sortOrder: string) => set({ sortOrder }), 
 }));
 
 export default useMyStore;

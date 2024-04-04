@@ -1,12 +1,9 @@
 import "./App.css";
-import ApiContainer from "./components/ApiContainer";
+import ApiContainer from "./components/Main";
 
 function App() {
   return (
-    <div className="app" style={{
-      width: '40%',
-      margin: 'auto'
-    }}>
+    <div className="app">
       <ApiContainer />
     </div>
   );
